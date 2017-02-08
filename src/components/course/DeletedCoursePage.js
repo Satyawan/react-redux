@@ -1,14 +1,38 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as courseActions from '../../actions/courseActions';
+import CourseList from './CourseList';
 
 class DeletedCoursePage extends React.Component{
+    
     render(){
+        const {courses} = this.props;
         return(
             <div>
                 <h1>Deleted Courses </h1>
-                <p> This will show the deleted courses </p>
+                
+                <CourseList courses={courses} />
             </div>
         );
     }
 }
 
-export default DeletedCoursePage;
+DeletedCoursePage.propTypes = {
+    courses: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state, ownProps){
+    return{
+        courses: state.courses
+    };
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+            actions: bindActionCreators(courseActions,dispatch)
+        };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(DeletedCoursePage);
