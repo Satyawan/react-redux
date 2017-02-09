@@ -8,7 +8,7 @@ const courses = [
     id: "1",
     title: "Morris 2e",
     watchHref: "",
-    authorId: "Satya",
+    authorId: "satya-singh",
     university: "Baruch College, NY",
     discipline: "Biology"
   },
@@ -16,7 +16,7 @@ const courses = [
     id: "2",
     title: "Morris 1e",
     watchHref: "",
-    authorId: "Satya",
+    authorId: "satya-singh",
     university: "Baruch College, NY",
     discipline: "Biology"
   },
@@ -24,7 +24,7 @@ const courses = [
     id: "3",
     title: "Morris 3e",
     watchHref: "",
-    authorId: "Kincade",
+    authorId: "kincade-park",
     university: "Baruch College, NY",
     discipline: "Biology"
   },
@@ -32,7 +32,7 @@ const courses = [
     id: "4",
     title: "Morris 5e",
     watchHref: "",
-    authorId: "Facundo",
+    authorId: "facundo-klaver",
     university: "Baruch College, NY",
     discipline: "Biology"
   },
@@ -40,7 +40,7 @@ const courses = [
     id: "5",
     title: "Morris 6e",
     watchHref: "",
-    authorId: "Harriet",
+    authorId: "harriet-wald",
     university: "Baruch College, NY",
     discipline: "Biology"
   },
@@ -49,7 +49,7 @@ const courses = [
     id: "6",
     title: "Micro Economics",
     watchHref: "",
-    authorId: "Kincade",
+    authorId: "kincade-park",
     university: "Baruch College, NY",
     discipline: "Economics"
   },
@@ -58,7 +58,7 @@ const courses = [
     id: "7",
     title: "Micro Economics 1e",
     watchHref: "",
-    authorId: "Harriet",
+    authorId: "harriet-wald",
     university: "Baruch College, NY",
     discipline: "Economics"
   },
@@ -66,7 +66,7 @@ const courses = [
     id: "8",
      title: "Micro Economics 2e",
     watchHref: "",
-    authorId: "Michael",
+    authorId: "harriet-wald",
     university: "Baruch College, NY",
     discipline: "Economics"
   }
@@ -108,7 +108,7 @@ class CourseApi {
           //The server would generate ids and watchHref's for new courses in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
           course.id = generateId(course);
-          course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
+          
           courses.push(course);
         }
 

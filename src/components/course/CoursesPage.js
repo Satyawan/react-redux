@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as courseActions from '../../actions/courseActions';
 import CourseList from './CourseList';
+import {browserHistory} from 'react-router';
 
 class CoursesPage extends React.Component{
     constructor(props, context){
@@ -10,7 +11,11 @@ class CoursesPage extends React.Component{
         this.state = {
             course: {title:""}
         };
-        
+        this.redirectToAddCoursePage = this.redirectToAddCoursePage.bind(this);
+    }
+
+    redirectToAddCoursePage(){
+        browserHistory.push('/course/');
     }
 
     render(){
@@ -19,16 +24,25 @@ class CoursesPage extends React.Component{
             <div>
                 <h1> Courses </h1>
                 
-                <h2> Find Course </h2>
-                <input  type="text" 
-                        onChange={this.onTitleChange}
-                        value = {this.state.course.title} />
+               
+                    <h3> Find Course </h3>
+                    <input  type="text" 
+                            onChange={this.onTitleChange}
+                            value = {this.state.course.title} />
 
-                <input  type="submit" 
-                        value="Search"
-                        onClick={this.onClickSave} />
-
+                    <input  type="submit" 
+                            value="Search"
+                            onClick={this.onClickSave} />
+                
                 <CourseList courses={courses} />
+
+                 <div className="well">
+
+                    <input  type="submit" 
+                            value="Add Course"
+                            className="btn btn-primary"
+                            onClick={this.redirectToAddCoursePage} />
+                </div>
 
             </div>
 
