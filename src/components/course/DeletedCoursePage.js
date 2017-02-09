@@ -11,7 +11,9 @@ class DeletedCoursePage extends React.Component{
         return(
             <div>
                 <h1>Deleted Courses </h1>
-                
+                <div className="alert alert-danger">
+                    <strong>Note - Deleting course from this page will permanently delete the course from the system.</strong>
+                </div>
                 <CourseList courses={courses} />
             </div>
         );

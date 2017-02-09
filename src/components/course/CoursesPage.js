@@ -24,7 +24,12 @@ class CoursesPage extends React.Component{
             <div>
                 <h1> Courses </h1>
                 
-               
+                <div className="alert alert-info">
+                    <strong>Note - Deleting course from this page will softly delete the course from the system.
+                    To delete the course permanently please delete it also from the Deleted Courses Page.</strong>
+                </div>
+
+               <div>
                     <h3> Find Course </h3>
                     <input  type="text" 
                             onChange={this.onTitleChange}
@@ -33,7 +38,10 @@ class CoursesPage extends React.Component{
                     <input  type="submit" 
                             value="Search"
                             onClick={this.onClickSave} />
+                </div>
                 
+                
+
                 <CourseList courses={courses} />
 
                  <div className="well">
